@@ -2,21 +2,32 @@ import { Link } from 'react-router-dom';
 import type { GameIdea } from '../data/types';
 import { IdeaPersonalMarkers } from './IdeaPersonalMarkers';
 import { TierBadge } from './TierBadge';
+import { useIdeaPersonalization } from '../hooks/useIdeaPersonalization';
 
 /**
  * Плотная строка реестра-«дела». Масштабируется до десятков идей без монотонной
  * сетки карточек. Ховер — янтарная заливка слева + сдвиг.
  */
 export function IdeaRow({ idea }: { idea: GameIdea }) {
+  const { isFavorite } = useIdeaPersonalization(idea.id);
+
   return (
     <Link
       to={`/idea/${idea.slug}`}
-      className="group relative grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-x-4 gap-y-2 border-b border-line-soft py-5 pl-5 pr-4 transition-colors last:border-b-0 hover:bg-surface/60 sm:grid-cols-[5rem_minmax(13rem,18rem)_1fr_auto] sm:gap-x-6 sm:py-5 sm:pl-6 sm:pr-5"
+      className={`group relative grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-x-4 gap-y-2 border-b py-5 pl-5 pr-4 transition-colors last:border-b-0 sm:grid-cols-[5rem_minmax(13rem,18rem)_1fr_auto] sm:gap-x-6 sm:py-5 sm:pl-6 sm:pr-5 ${
+        isFavorite
+          ? 'border-accent/60 bg-accent/10 shadow-[inset_0_0_0_1px_rgba(227,147,74,0.2)] hover:bg-accent/15'
+          : 'border-line-soft hover:bg-surface/60'
+      }`}
     >
       {/* Amber edge on hover */}
       <span
         aria-hidden
-        className="absolute left-0 top-3 bottom-3 w-1 origin-top scale-y-0 rounded-r-full bg-accent transition-transform duration-300 group-hover:scale-y-100"
+        className={`absolute left-0 top-3 bottom-3 w-1.5 origin-top rounded-r-full transition-transform duration-300 ${
+          isFavorite
+            ? 'scale-y-100 bg-accent-bright shadow-[0_0_14px_rgba(242,168,95,0.6)]'
+            : 'scale-y-0 bg-accent group-hover:scale-y-100'
+        }`}
       />
 
       <span

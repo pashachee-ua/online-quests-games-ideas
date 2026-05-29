@@ -5,6 +5,7 @@ import { ProsConsList } from '../components/ProsConsList';
 import { TierBadge } from '../components/TierBadge';
 import { hasCover } from '../components/IdeaImage';
 import { useIdeaPersonalization } from '../hooks/useIdeaPersonalization';
+import { FavoriteStarIcon } from '../components/FavoriteStarIcon';
 import { withBasePath } from '../utils/assetPath';
 
 export function IdeaDetail() {
@@ -98,23 +99,23 @@ export function IdeaDetail() {
                   type="button"
                   aria-pressed={isFavorite}
                   onClick={toggleFavorite}
-                  className={`inline-flex min-h-12 items-center gap-3 rounded-md border px-3.5 py-2 font-mono text-[0.8rem] font-600 uppercase tracking-[0.08em] shadow-sm backdrop-blur-sm transition-colors ${
+                  className={`inline-flex min-h-8 items-center gap-1.5 rounded-full border bg-base/90 px-2.5 py-1.5 font-mono text-[0.72rem] font-700 uppercase tracking-[0.07em] text-ink shadow-[0_10px_24px_rgba(0,0,0,0.48),0_0_0_1px_rgba(242,168,95,0.22),0_0_18px_rgba(227,147,74,0.18)] backdrop-blur-md transition-colors ${
                     isFavorite
-                      ? 'border-accent/70 bg-accent-soft/90 text-accent-bright hover:border-accent'
-                      : 'border-accent/45 bg-base/55 text-ink-soft hover:border-accent/70 hover:bg-accent-soft/60 hover:text-accent-bright'
+                      ? 'border-accent-bright/90 hover:border-accent-bright'
+                      : 'border-accent-bright/70 hover:border-accent-bright'
                   }`}
                 >
                   <span
-                    className={`inline-flex h-8 w-8 items-center justify-center ${
+                    className={`inline-flex items-center justify-center transition-colors ${
                       isFavorite
-                        ? 'text-accent-bright'
-                        : 'text-accent'
+                        ? 'text-accent-bright drop-shadow-[0_0_6px_rgba(242,168,95,0.65)]'
+                        : 'text-muted/55'
                     }`}
                     aria-hidden
                   >
-                    <FavoriteStarIcon className="h-7 w-7" />
+                    <FavoriteStarIcon className="h-4 w-4" />
                   </span>
-                  {isFavorite ? 'В избранном' : 'В избранное'}
+                  {isFavorite ? 'в избранном' : 'в избранное'}
                 </button>
               </div>
             </div>
@@ -225,23 +226,5 @@ export function IdeaDetail() {
         </nav>
       </div>
     </article>
-  );
-}
-
-function FavoriteStarIcon({ className = '' }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      fill="currentColor"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.5"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M12 2.75l2.72 5.52 6.09.88-4.4 4.3 1.04 6.07L12 16.65 6.55 19.52l1.04-6.07-4.4-4.3 6.09-.88L12 2.75z" />
-    </svg>
   );
 }
