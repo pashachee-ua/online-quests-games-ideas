@@ -1,4 +1,5 @@
 import type { GameIdea } from '../data/types';
+import { withBasePath } from '../utils/assetPath';
 
 export function hasCover(idea: GameIdea): boolean {
   return Boolean(idea.image) && !idea.image!.endsWith('/placeholder.svg');
@@ -15,13 +16,15 @@ export function IdeaImage({
   idea: GameIdea;
   className?: string;
 }) {
+  const coverSrc = withBasePath(idea.image);
+
   if (hasCover(idea)) {
     return (
       <figure
         className={`relative aspect-[16/10] w-full overflow-hidden rounded-lg border border-line bg-surface ${className}`}
       >
         <img
-          src={idea.image}
+          src={coverSrc}
           alt={`Обложка идеи «${idea.title}»`}
           className="h-full w-full object-cover"
           loading="lazy"

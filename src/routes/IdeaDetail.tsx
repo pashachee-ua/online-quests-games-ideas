@@ -5,6 +5,7 @@ import { ProsConsList } from '../components/ProsConsList';
 import { TierBadge } from '../components/TierBadge';
 import { hasCover } from '../components/IdeaImage';
 import { useIdeaPersonalization } from '../hooks/useIdeaPersonalization';
+import { withBasePath } from '../utils/assetPath';
 
 export function IdeaDetail() {
   const { slug } = useParams();
@@ -30,6 +31,7 @@ export function IdeaDetail() {
   const tier = TIER_BY_ID[idea.recommendation];
   const tierClass = TIER_CLASSES[idea.recommendation];
   const cover = hasCover(idea);
+  const coverSrc = withBasePath(idea.image);
   const index = IDEAS.findIndex((i) => i.id === idea.id);
   const prev = index > 0 ? IDEAS[index - 1] : undefined;
   const next = index < IDEAS.length - 1 ? IDEAS[index + 1] : undefined;
@@ -50,7 +52,7 @@ export function IdeaDetail() {
         <div className="relative min-h-[44vh] w-full overflow-hidden sm:min-h-[56vh]">
           {cover ? (
             <img
-              src={idea.image}
+              src={coverSrc}
               alt=""
               aria-hidden
               className="absolute inset-0 h-full w-full object-cover"

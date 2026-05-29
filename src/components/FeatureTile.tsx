@@ -3,6 +3,7 @@ import type { GameIdea } from '../data/types';
 import { hasCover } from './IdeaImage';
 import { IdeaPersonalMarkers } from './IdeaPersonalMarkers';
 import { TierBadge } from './TierBadge';
+import { withBasePath } from '../utils/assetPath';
 
 /**
  * Кинематографичный тайл top-идеи: обложка как фон, заголовок поверх затемнения.
@@ -18,6 +19,7 @@ export function FeatureTile({
   className?: string;
 }) {
   const cover = hasCover(idea);
+  const coverSrc = withBasePath(idea.image);
 
   const heights =
     size === 'lead'
@@ -40,7 +42,7 @@ export function FeatureTile({
       {/* Cover */}
       {cover ? (
         <img
-          src={idea.image}
+          src={coverSrc}
           alt=""
           aria-hidden
           loading="lazy"
