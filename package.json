@@ -6,6 +6,7 @@
   "description": "Внутренняя витрина идей игровых механик для онлайн-квестов (тимбилдинг)",
   "scripts": {
     "dev": "vite",
+    "images:webp": "node scripts/convert-images-to-webp.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"

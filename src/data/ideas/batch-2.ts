@@ -37,7 +37,7 @@ export const batch2: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: false,
-    image: '/images/ideas/svideteli-sobytiya-cover.png',
+    image: '/images/ideas/svideteli-sobytiya-cover.webp',
   },
   {
     id: 12,
@@ -66,7 +66,7 @@ export const batch2: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: false,
-    image: '/images/ideas/dvoynaya-realnost-cover.png',
+    image: '/images/ideas/dvoynaya-realnost-cover.webp',
   },
   {
     id: 13,
@@ -95,7 +95,7 @@ export const batch2: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: true,
-    image: '/images/ideas/slepaya-deshifrovka-cover.png',
+    image: '/images/ideas/slepaya-deshifrovka-cover.webp',
   },
   {
     id: 14,
@@ -232,7 +232,7 @@ export const batch2: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: false,
-    image: '/images/ideas/zapreshchennye-slova-taboo-cover.png',
+    image: '/images/ideas/zapreshchennye-slova-taboo-cover.webp',
   },
   {
     id: 19,
@@ -288,6 +288,6 @@ export const batch2: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: true,
-    image: '/images/ideas/raspredelennyy-pult-cover.png',
+    image: '/images/ideas/raspredelennyy-pult-cover.webp',
   },
 ];

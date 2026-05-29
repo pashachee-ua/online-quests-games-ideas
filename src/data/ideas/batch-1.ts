@@ -36,7 +36,7 @@ export const batch1: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: false,
-    image: '/images/ideas/just-one-cover.png',
+    image: '/images/ideas/just-one-cover.webp',
   },
   {
     id: 2,
@@ -65,7 +65,7 @@ export const batch1: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: false,
-    image: '/images/ideas/cross-clues-cover.png',
+    image: '/images/ideas/cross-clues-cover.webp',
   },
   {
     id: 3,
@@ -175,7 +175,7 @@ export const batch1: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: false,
-    image: '/images/ideas/wavelength-cover.png',
+    image: '/images/ideas/wavelength-cover.webp',
   },
   {
     id: 7,
@@ -204,7 +204,7 @@ export const batch1: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: false,
-    image: '/images/ideas/herd-mentality-cover.png',
+    image: '/images/ideas/herd-mentality-cover.webp',
   },
   {
     id: 8,
@@ -287,6 +287,6 @@ export const batch1: GameIdea[] = [
     recommendation: 'top-validation',
     isTopPick: true,
     isBatchHighlight: true,
-    image: '/images/ideas/fragmenty-cover.png',
+    image: '/images/ideas/fragmenty-cover.webp',
   },
 ];
