@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Design tokens — dark cinematic "investigation case wall".
+   Charcoal/ink background, warm amber accent pulled straight from the covers.
+   Covers are the hero; type is editorial; tiers carry semantic colour.
+   ────────────────────────────────────────────────────────────────────────── */
+@theme {
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Menlo', monospace;
+
+  /* Neutrals — warm charcoal/ink */
+  --color-base: #14110d;
+  --color-base-deep: #0e0c09;
+  --color-surface: #1b1712;
+  --color-surface-2: #221d16;
+  --color-raised: #2a2419;
+  --color-ink: #f4ecdd;
+  --color-ink-soft: #d8cdb9;
+  --color-muted: #a99c84;
+  --color-faint: #96866b;
+  --color-line: #403624;
+  --color-line-soft: #332a1d;
+
+  /* Accent — amber (matches cover glow) */
+  --color-accent: #e3934a;
+  --color-accent-bright: #f2a85f;
+  --color-accent-deep: #b4470f;
+  --color-accent-ink: #3a2410;
+  --color-accent-soft: #2e2114;
+
+  /* Recommendation tiers (semantic, dark-tuned) */
+  --color-tier-top: #f0a95a;
+  --color-tier-top-soft: #2f2413;
+  --color-tier-emotional: #e08891;
+  --color-tier-emotional-soft: #2f1c1e;
+  --color-tier-strong: #d8b65a;
+  --color-tier-strong-soft: #2c2613;
+  --color-tier-support: #74c1a6;
+  --color-tier-support-soft: #15241f;
+  --color-tier-pattern: #b9ab90;
+  --color-tier-pattern-soft: #242019;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-base);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+    /* Atmosphere: warm amber glow top-right, cool depth bottom-left.
+       Film-grain layer added via ::before so it can stay subordinate. */
+    background-image:
+      radial-gradient(
+        70rem 50rem at 88% -15%,
+        rgba(227, 147, 74, 0.12),
+        transparent 60%
+      ),
+      radial-gradient(
+        60rem 50rem at -10% 110%,
+        rgba(60, 90, 110, 0.1),
+        transparent 55%
+      );
+    background-attachment: fixed, fixed;
+  }
+
+  /* Film grain — very subtle, fixed, non-interactive */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* App content sits above the grain layer */
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #1a1208;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ── Motion: one orchestrated reveal on load + amber underline wipe ───────── */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .rise {
+    opacity: 0;
+    animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* Amber underline that wipes in on hover/active (Nav, index rows) */
+  .wipe {
+    background-image: linear-gradient(var(--color-accent), var(--color-accent));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    transition: background-size 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .wipe:hover,
+  .wipe-active {
+    background-size: 100% 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .rise {
+    opacity: 1;
+    transform: none;
+  }
+}
