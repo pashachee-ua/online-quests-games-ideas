@@ -141,6 +141,7 @@ export const batch9: GameIdea[] = [
     recommendation: 'narrative-pattern',
     isTopPick: false,
     isBatchHighlight: false,
+    image: '/images/ideas/zapravka-na-nichey-zemle-cover.webp',
   },
   {
     id: 78,
