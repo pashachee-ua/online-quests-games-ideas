@@ -4,7 +4,7 @@ import { PURPOSE, SITE_SUBTITLE, SITE_TITLE } from '../data/meta';
 import { FeatureTile } from '../components/FeatureTile';
 import { IdeaRow } from '../components/IdeaRow';
 
-const TOTAL = 72;
+const SOURCE_TOTAL = 84;
 
 export function HomeList() {
   const topPicks = IDEAS.filter((i) => i.isTopPick);
@@ -38,7 +38,7 @@ export function HomeList() {
             {PURPOSE}
           </p>
           <p className="shrink-0 font-mono text-[0.8rem] uppercase tracking-[0.14em] text-muted sm:text-right">
-            Досье · {IDEAS.length}/{TOTAL} механик
+            Досье · {IDEAS.length} уник. из {SOURCE_TOTAL} ID
             <br />
             {topPicks.length} топ-кандидатов
           </p>

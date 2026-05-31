@@ -16,13 +16,13 @@ export type RecTier =
   | 'narrative-pattern'; // «мета-паттерны и сценарные слои, не самостоятельные игры»
 
 export interface GameIdea {
-  /** Номер идеи из документа (1..72). */
+  /** Номер идеи из документа (1..84). */
   id: number;
   /** Стабильный слаг для URL (латиница, kebab-case). */
   slug: string;
   /** Название как в документе («Фрагменты», «Just One», «Wavelength»). */
   title: string;
-  /** Номер батча документа (1..8). */
+  /** Номер батча документа (1..9). */
   batch: number;
   /** Суть — один абзац. */
   concept: string;

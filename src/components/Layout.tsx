@@ -4,7 +4,7 @@ import { ScrollToTop } from './ScrollToTop';
 import { SITE_TITLE } from '../data/meta';
 import { IDEAS } from '../data/ideas';
 
-const TOTAL = 72; // всего идей в документе (источник)
+const SOURCE_TOTAL = 84; // всего ID в документе-источнике до дедупликации
 
 export function Layout() {
   return (
@@ -17,7 +17,7 @@ export function Layout() {
               {SITE_TITLE}
             </span>
             <span className="hidden font-mono text-[0.76rem] tracking-[0.1em] text-muted sm:inline">
-              {String(IDEAS.length).padStart(2, '0')}/{TOTAL}
+              {String(IDEAS.length).padStart(2, '0')} уник.
             </span>
           </Link>
           <Nav />
@@ -31,15 +31,15 @@ export function Layout() {
       <footer className="mt-8 border-t border-line/80 bg-base-deep/60">
         <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8">
           <p className="font-mono text-[0.76rem] uppercase tracking-[0.18em] text-muted">
-            Досье · {IDEAS.length} из {TOTAL} механик
+            Досье · {IDEAS.length} уникальных механик из {SOURCE_TOTAL} ID
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
             Внутренняя витрина для разработчиков платформы. Источник —{' '}
             <code className="rounded bg-surface px-1.5 py-0.5 font-mono text-[0.8em] text-ink-soft">
               docs/product/GAME_IDEAS_PROS_CONS.md
             </code>{' '}
-            проекта online-quests. Идеи строго из документа; у топ-идей —
-            сгенерированные обложки.
+            проекта online-quests. Идеи строго из документа; явные дубли скрыты,
+            у топ-идей — сгенерированные обложки.
           </p>
         </div>
       </footer>

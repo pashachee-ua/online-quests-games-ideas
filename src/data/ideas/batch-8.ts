@@ -3,7 +3,7 @@ import type { GameIdea } from '../types';
 /**
  * Батч 8 — идеи 71–72. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 8: Ideas 71-72).
  * В документе для батча 8 нет отдельного Preliminary Takeaways; тиры выведены из
- * «Final Coverage Note»:
+ * бывшей финальной заметки перед добавлением Batch 9:
  *   supporting: 71 The Decoder как финал, который собирает предыдущие ключи
  *   strong-risky: 72 Совместное строительство как более дорогая real-time фаза
  */
