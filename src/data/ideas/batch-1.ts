@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 1 — идеи 1–10. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 1: Ideas 1-10).
@@ -8,7 +8,7 @@ import type { GameIdea } from '../types';
  *   strong-risky: 4 Telestrations, 8 Keep Talking, 9 Magic Maze
  *   самый практичный кандидат батча → 10 Фрагменты (isBatchHighlight)
  */
-export const batch1: GameIdea[] = [
+export const batch1: RawGameIdea[] = [
   {
     id: 1,
     slug: 'just-one',

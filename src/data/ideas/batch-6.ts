@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 6 — идеи 51–60. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 6: Ideas 51-60).
@@ -10,7 +10,7 @@ import type { GameIdea } from '../types';
  *   практичные кандидаты батча (isBatchHighlight): 57 Хронология с подвохом,
  *     53 Незнакомый язык
  */
-export const batch6: GameIdea[] = [
+export const batch6: RawGameIdea[] = [
   {
     id: 51,
     slug: 'zerkalnoe-otrazhenie',

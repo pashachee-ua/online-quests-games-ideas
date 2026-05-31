@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 7 — идеи 61–70. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 7: Ideas 61-70).
@@ -11,7 +11,7 @@ import type { GameIdea } from '../types';
  *   практичные кандидаты батча (isBatchHighlight): 65 Дилемма ресурсов,
  *     70 Truth or Lie
  */
-export const batch7: GameIdea[] = [
+export const batch7: RawGameIdea[] = [
   {
     id: 61,
     slug: 'anahronizm',

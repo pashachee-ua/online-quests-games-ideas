@@ -3,6 +3,7 @@ import { Layout } from './components/Layout';
 import { HomeList } from './routes/HomeList';
 import { IdeaDetail } from './routes/IdeaDetail';
 import { RecommendationsPage } from './routes/RecommendationsPage';
+import { ScoresPage } from './routes/ScoresPage';
 import { AboutPage } from './routes/AboutPage';
 import { NotFound } from './routes/NotFound';
 
@@ -13,6 +14,7 @@ export default function App() {
         <Route index element={<HomeList />} />
         <Route path="idea/:slug" element={<IdeaDetail />} />
         <Route path="recommendations" element={<RecommendationsPage />} />
+        <Route path="scores" element={<ScoresPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>

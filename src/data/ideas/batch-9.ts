@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 9 — идеи 73–84. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 9: Ideas 73-84).
@@ -11,7 +11,7 @@ import type { GameIdea } from '../types';
  *     79 Мотель «Развилка», 74 Дом, который дышит
  *   практичные кандидаты батча (isBatchHighlight): 81 Шлюз, 73 Сигнал из пустоты
  */
-export const batch9: GameIdea[] = [
+export const batch9: RawGameIdea[] = [
   {
     id: 73,
     slug: 'signal-iz-pustoty',

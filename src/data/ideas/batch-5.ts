@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 5 — идеи 41–50. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 5: Ideas 41-50).
@@ -11,7 +11,7 @@ import type { GameIdea } from '../types';
  *   практичные кандидаты батча (isBatchHighlight): 42 Перехваченное сообщение,
  *     49 Невидимое
  */
-export const batch5: GameIdea[] = [
+export const batch5: RawGameIdea[] = [
   {
     id: 41,
     slug: 'svidetelskie-pokazaniya',

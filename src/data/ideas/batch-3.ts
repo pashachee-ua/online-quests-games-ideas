@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 3 — идеи 21–30. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 3: Ideas 21-30).
@@ -8,7 +8,7 @@ import type { GameIdea } from '../types';
  *   emotional-social: 24 Вагонетка, 26 Коллективная история, 29 Эхо
  *   отдельный практичный кандидат батча в takeaways не выделен
  */
-export const batch3: GameIdea[] = [
+export const batch3: RawGameIdea[] = [
   {
     id: 21,
     slug: 'chto-izmenilos',

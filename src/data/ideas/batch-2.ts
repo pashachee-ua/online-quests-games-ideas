@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 2 — идеи 11–20. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 2: Ideas 11-20).
@@ -10,7 +10,7 @@ import type { GameIdea } from '../types';
  *   dedupe: 14 Кодовые воспоминания объединена с 34 Кодовые слова в сюжете;
  *     16 Ассоциативная цепь объединена с 40 Цепочка ассоциаций
  */
-export const batch2: GameIdea[] = [
+export const batch2: RawGameIdea[] = [
   {
     id: 11,
     slug: 'svideteli-sobytiya',

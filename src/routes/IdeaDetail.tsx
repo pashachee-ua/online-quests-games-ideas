@@ -7,6 +7,7 @@ import { hasCover } from '../components/IdeaImage';
 import { useIdeaPersonalization } from '../hooks/useIdeaPersonalization';
 import { FavoriteStarIcon } from '../components/FavoriteStarIcon';
 import { withBasePath } from '../utils/assetPath';
+import { IdeaScoreSummary } from '../components/IdeaScoreSummary';
 
 export function IdeaDetail() {
   const { slug } = useParams();
@@ -133,6 +134,8 @@ export function IdeaDetail() {
             {idea.concept}
           </p>
         </section>
+
+        <IdeaScoreSummary idea={idea} />
 
         <section className="mt-8 rounded-lg border border-line bg-surface/55 p-5 sm:p-6">
           <div className="flex flex-wrap items-center justify-between gap-3">

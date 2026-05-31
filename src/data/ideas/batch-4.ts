@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 4 — идеи 31–40. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 4: Ideas 31-40).
@@ -11,7 +11,7 @@ import type { GameIdea } from '../types';
  *   dedupe: 31 Художник-свидетель объединена с 15 Рисунок свидетеля;
  *     36 Запретные слова объединена с 18 Запрещённые слова / Taboo
  */
-export const batch4: GameIdea[] = [
+export const batch4: RawGameIdea[] = [
   {
     id: 32,
     slug: 'anatomiya-monstra',

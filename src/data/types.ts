@@ -2,9 +2,9 @@
  * Типы данных витрины идей.
  *
  * Источник контента — `docs/product/GAME_IDEAS_PROS_CONS.md` соседнего проекта
- * online-quests. У каждой идеи в документе есть только Суть / Плюсы / Минусы /
- * Вывод (числовых оценок по критериям НЕТ). Тиры и top-флаги выведены из
- * разделов «Preliminary Batch N Takeaways».
+ * online-quests. У каждой идеи в документе есть Суть / Плюсы / Минусы /
+ * Вывод. Тиры и top-флаги выведены из разделов «Preliminary Batch N Takeaways».
+ * Числовые оценки — первичная Codex-оценка для удобной сортировки.
  */
 
 /** Тиры рекомендаций — взяты из секций Takeaways после каждого батча. */
@@ -15,7 +15,22 @@ export type RecTier =
   | 'supporting' // «полезные supporting / micro-механики»
   | 'narrative-pattern'; // «мета-паттерны и сценарные слои, не самостоятельные игры»
 
-export interface GameIdea {
+export interface IdeaScores {
+  /** Насколько механика вовлекает всех участников команды. */
+  engagement: number;
+  /** Насколько сильную атмосферу/эмоцию может дать идея. */
+  atmosphere: number;
+  /** Насколько быстро и качественно идею можно реализовать для web validation launch. */
+  implementation: number;
+  /** Насколько идея ощущается свежей и отличимой от типовых активностей. */
+  originality: number;
+  /** Насколько сильная, ясная и переиспользуемая игровая механика лежит в основе. */
+  mechanics: number;
+}
+
+export type ScoreMetricId = keyof IdeaScores;
+
+export interface RawGameIdea {
   /** Номер идеи из документа (1..84). */
   id: number;
   /** Стабильный слаг для URL (латиница, kebab-case). */
@@ -40,6 +55,13 @@ export interface GameIdea {
   isBatchHighlight: boolean;
   /** Путь к сгенерированной обложке; если его нет, UI покажет fallback-заглушку. */
   image?: string;
+}
+
+export interface GameIdea extends RawGameIdea {
+  /** Первичная Codex-оценка идеи по 5 показателям. */
+  scores: IdeaScores;
+  /** Среднее пяти score-показателей, округленное до 1 знака. */
+  totalScore: number;
 }
 
 /** Описание одного тира для бейджей и страницы рекомендаций. */

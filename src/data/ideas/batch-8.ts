@@ -1,4 +1,4 @@
-import type { GameIdea } from '../types';
+import type { RawGameIdea } from '../types';
 
 /**
  * Батч 8 — идеи 71–72. Источник: GAME_IDEAS_PROS_CONS.md (## Batch 8: Ideas 71-72).
@@ -7,7 +7,7 @@ import type { GameIdea } from '../types';
  *   supporting: 71 The Decoder как финал, который собирает предыдущие ключи
  *   strong-risky: 72 Совместное строительство как более дорогая real-time фаза
  */
-export const batch8: GameIdea[] = [
+export const batch8: RawGameIdea[] = [
   {
     id: 71,
     slug: 'the-decoder',
