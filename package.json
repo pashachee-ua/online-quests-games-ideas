@@ -8,6 +8,7 @@
     "dev": "vite",
     "images:webp": "node scripts/convert-images-to-webp.mjs",
     "build": "tsc --noEmit && vite build",
+    "postbuild": "cp dist/index.html dist/404.html",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
